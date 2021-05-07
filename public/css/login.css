@@ -47,7 +47,11 @@ body {
   width: 50%;
   border-radius: 15px;
 }
-
+@media (max-width: 500px) {
+  .modal-content {
+    width: 80%;
+  }
+}
 .close {
   color: #aaaaaa;
   float: right;

@@ -1,0 +1,90 @@
+#attendance {
+  min-height: 90vh;
+  padding-top: 20px;
+}
+#attendance .container-main {
+  position: relative;
+  max-width: 50%;
+  margin: 0 auto;
+}
+#attendance .container-main .exams {
+  width: 100%;
+}
+span#blur {
+  color: gray;
+}
+h3 {
+  position: relative;
+  margin-bottom: 40px;
+}
+h3#heading::after {
+  background: #060053 none repeat scroll 0 0;
+  bottom: -7px;
+  content: "";
+  height: 1.5px;
+  left: 0;
+  position: absolute;
+  width: 54px;
+}
+#attendance hr {
+  margin: 0px 0 40px;
+}
+#attendance .container-main .exams .exam {
+  position: relative;
+  backdrop-filter: blur(15px);
+  background-color: rgba(128, 128, 128, 0.1);
+  height: 60px;
+  padding: 10px 15px;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
+#attendance .container-main .exams .exam span {
+  position: relative;
+  top: 5px;
+  color: white;
+}
+#attendance .container-main .exams .exam .title {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-15px);
+  margin-left: 10px;
+}
+#attendance .container-main .exams .exam a {
+  text-decoration: none;
+  float: right;
+  background: #060053;
+  padding: 8px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 140px;
+  text-align: center;
+}
+#attendance .container-main .exams .exam a.submitted {
+  background: transparent;
+  color: #060053;
+  border: 1px solid #060053;
+  padding: 5px;
+}
+#attendance .container-main .exams .exam a:hover {
+  background: #0a0468;
+}
+#attendance .container-main .exams .exam a i {
+  font-size: 13px;
+}
+@media (max-width: 720px) {
+  #attendance .container-main {
+    max-width: 95%;
+  }
+  .modal-content {
+    width: 90%;
+  }
+}
+@media (max-width: 520px) {
+  #attendance .container-main .exams .title {
+    display: none;
+  }
+}

@@ -1,0 +1,40 @@
+<%- include("partials/header") %> 
+<section id="profile">
+    <div class="container">
+        <div class="box">
+            <div class="dp">
+                <img src="images/def.png" alt="">
+            </div>
+            <div class="details">
+                <div class="form-el my-3">
+                    <label for="name" class="font-weight-bold">Name</label>
+                    <input type="text" value="<%= name %> " disabled>
+                </div>
+                <div class="form-el my-3">
+                    <label for="name" class="font-weight-bold">Username</label>
+                    <input type="text" value="<%= username %> " disabled>
+                </div>
+                <div class="form-el my-3">
+                    <label for="name" class="font-weight-bold">Registration Number</label>
+                    <input type="text" value="<%= regst %> " disabled>
+                </div>
+                <div class="form-el my-3">
+                    <label for="name" class="font-weight-bold">Contact</label>
+                    <input type="text" value="+<%= contact %> " disabled>
+                </div>
+                <div class="form-el my-3">
+                    <label for="name" class="font-weight-bold">Designation</label>
+                    <input type="text" value="<%= designation %> " style="text-transform: capitalize;" disabled>
+                </div>
+                <% if (designation=="student") { %>
+                    <div class="form-el my-3">
+                        <label for="name" class="font-weight-bold">Class</label>
+                        <input type="text" value="<%= class_ %>th " style="text-transform: capitalize;" disabled>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</section>
+<%- include("partials/footer") %> 
+    

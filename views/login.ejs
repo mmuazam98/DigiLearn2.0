@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiLearn</title>
+    <script src="https://kit.fontawesome.com/c0078485ae.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>For testing purpose</h2>
+    <p>
+        Teacher credentials:
+        <ul>
+            <li>Username: mm9084</li>
+            <li>Password: abc123</li>
+        </ul>
+    </p>
+    <p>
+        Student credentials:
+        <ul>
+            <li>Username: mb9084</li>
+            <li>Password: abc123</li>
+        </ul>
+    </p>
+  </div>
+</div>
+    <img src="/images/wave-1.png" alt="" class="wave">
+    <div class="container">
+        <div class="img">
+            <img src="/images/phone.png" alt="">
+        </div>
+        <div class="login-container">
+            <form class="form-login" action="/login" method="post">
+                <img class="avatar" src="images/def.png" alt="">
+                <h2>Welcome</h2>
+                <div class="error">
+                    <p id="error"></p>
+                </div>
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-user"> </i>
+                    </div>
+                    <div>
+                        <h5 >Username</h5>
+                        <input class="input" type="text" name="username" id="username" required>
+                    </div>
+                </div>
+                <div class="input-div pass">
+                    <div class="i">
+                        <i class="fas fa-lock"> </i>
+                    </div>
+                    <div class="div">
+                        <h5>Password</h5>
+                        <input class="input" type="password" name="password" id="password" required>
+                        <span id="view">
+                            <i class="far fa-eye" id="eye" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+                <button type="submit" class="btn" >
+                    Login
+                </button>
+                <!-- <a href="#">Forgot Password?</a> -->
+            </form>
+        </div>
+    </div>
+    <script>
+        var modal = document.getElementById("myModal");
+        var span = document.getElementsByClassName("close")[0];
+        modal.style.display = "block";
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <script type="text/javascript" src="/js/login.js"></script>
+
+</body>
+</html>

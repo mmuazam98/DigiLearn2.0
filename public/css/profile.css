@@ -1,0 +1,43 @@
+#profile {
+  /* width: 100vw; */
+  padding: 100px 0 30px;
+}
+#profile .container {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#profile .box {
+  width: 500px;
+  min-height: 500px;
+  padding: 10px 20px;
+  backdrop-filter: blur(15px);
+  background-color: rgba(128, 128, 128, 0.1);
+  border-radius: 10px;
+  border: none;
+}
+#profile .box .dp {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+#profile .box .dp img {
+  height: 100px;
+  width: 100px;
+}
+#profile .box .details {
+  margin-top: 20px;
+}
+#profile .box .details label,
+#profile .box .details input {
+  color: white;
+}
+#profile .box .details label {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+#profile .box .details input {
+  font-size: 18px;
+  border-bottom: 2px solid white !important;
+}

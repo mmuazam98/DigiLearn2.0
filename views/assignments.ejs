@@ -1,0 +1,48 @@
+<%- include("partials/header") %>
+
+
+<section id="assignments">
+    <div class="container">
+        <% classes.forEach((el,index) => { %>
+            <div class="row it d-flex justify-content-center">
+                <div class=" col-sm-10" id="<%= el.id %>">
+                   <p>
+                      Please upload documents only in 'pdf', 'docx', 'rtf' or 'text' format.
+                   </p>
+                   <br>
+                   <div class="row d-flex justify-content-center">
+                      <div class="col-12 mb-3">
+                         <h3 class="text-center subject"><%= el.name %></h3>
+                      </div>
+                   </div>
+                   <div id="uploader">
+                      <div class="row uploadDoc d-flex justify-content-center">
+                         <div class="col-4 ">
+                            <div class="docErr">Please upload valid file</div>
+                            <div class="fileUpload btn btn-orange text-center">
+                               <img src="https://image.flaticon.com/icons/svg/136/136549.svg" class="icon">
+                               <span class="upl" id="upload">Select</span>
+                               <input type="file" class="upload up" id="files<%= index+1 %>" multiple onchange="readURL(this);" />
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="text-center" id="pgrs<%= index+1 %>">
+                      <p id="uploading"></p>
+                      <progress value="0" max="100" id="progress<%= index+1 %>"></progress>
+                   </div>
+                   <div class="text-center mt-5">
+                      <!-- <a class="btn btn-new"><i class="fa fa-plus"></i> Add new</a> -->
+                      <a class="btn btn-next" id="send<%= index+1 %>"><i class="fa fa-paper-plane"></i> Upload</a>
+                   </div>
+                </div>
+                </div>
+        <% }) %>
+    
+    </div>
+ </section>
+ 
+ 
+    
+
+<%- include("partials/footer") %>

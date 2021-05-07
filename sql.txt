@@ -1,0 +1,103 @@
+insert into users (userID,username,name,designation,password,class,contact) VALUES
+('yEBqWA9','am9843','Azmat Mukhtar','student','$2b$10$LMxcdTrSQHrdsCTcK.4aKuR4rkVEqU.mlaShusiCxD1sG7DykMOjW',6,919879875642),
+('eEBqWA9','sm7682','Shireen Manzoor','student','$2b$10$LMxcdTrSQHrdsCTcK.4aKuR4rkVEqU.mlaShusiCxD1sG7DykMOjW',6,919087654654),
+('wEBqWA9','fa1616','Fatima Altaf','student','$2b$10$LMxcdTrSQHrdsCTcK.4aKuR4rkVEqU.mlaShusiCxD1sG7DykMOjW',5,918971223434),
+('qEBqWA9','sk9091','Suhana Khan','student','$2b$10$LMxcdTrSQHrdsCTcK.4aKuR4rkVEqU.mlaShusiCxD1sG7DykMOjW',5,919099818808),
+('qEBqWA9','as8791','Arsh Shah','student','$2b$10$LMxcdTrSQHrdsCTcK.4aKuR4rkVEqU.mlaShusiCxD1sG7DykMOjW',5,918129818808)
+
+<% classes.forEach(el => { %>
+    <div class="col-xl-12 ">
+      <div class="card">
+      <img class="card-img" src="images/<%= el.img %> " alt="subject">
+      <div class="card-img-overlay text-white ">
+          <h4 class="card-title">
+            <%= el.subject %> 
+          </h4>
+          <a href="<%= el.link %> " target="_blank" class="card-link"><%= el.link %> </a>
+          <h6 class="card-subtitle mb-2">
+            <%= el.teacher %> 
+          </h6>
+          <p class="card-text">SLOT: <%= el.slots %> </p>
+      </div>
+      </div>
+  </div>
+  <% }) %>
+
+  `<div class="col-xl-12 ">
+                            <div class="card">
+                            <img class="card-img" src="images/${
+                              subjects[Day[i] - 1].img
+                            }" alt="subject">
+                            <div class="card-img-overlay text-white ">
+                                <h4 class="card-title">${
+                                  subjects[Day[i] - 1].subject
+                                }</h4>
+                                <a href="${subjects[Day[i] - 1].link}"
+                           target="_blank" class="card-link">${
+                             subjects[Day[i] - 1].link
+                           }</a>
+                                <h6 class="card-subtitle mb-2">${
+                                  subjects[Day[i] - 1].teacher
+                                }</h6>
+                                <aside>
+                                  <span>${subjects[Day[i] - 1].total}</span>
+                                  <span>${subjects[Day[i] - 1].att}</span>
+                                  <span>${
+                                    subjects[Day[i] - 1].total - subjects[Day[i] - 1].att
+                                  }</span>
+                                </aside>
+                                <p class="card-text">SLOT: ${slots[len - i].slot}</p>
+                            </div>
+                            </div>
+                        </div>`
+
+
+function generate_button_message(msg, buttons) {
+    /* Buttons should be object array 
+        [
+          {
+            name: 'Existing User',
+            value: 'existing'
+          },
+          {
+            name: 'New User',
+            value: 'new'
+          }
+        ]
+      */
+    INDEX++;
+    var btn_obj = buttons
+      .map(function (button) {
+        return (
+          '              <li class="button"><a href="javascript:;" class="btn btn-primary chat-btn" chat-value="' +
+          button.value +
+          '">' +
+          button.name +
+          "</a></li>"
+        );
+      })
+      .join("");
+    var str = "";
+    str += "<div id='cm-msg-" + INDEX + '\' class="chat-msg user">';
+    str += '          <span class="msg-avatar">';
+    str +=
+      '            <img src="https://image.crisp.im/avatar/operator/196af8cc-f6ad-4ef7-afd1-c45d5231387c/240/?1483361727745">';
+    str += "          </span>";
+    str += '          <div class="cm-msg-text">';
+    str += msg;
+    str += "          </div>";
+    str += '          <div class="cm-msg-button">';
+    str += "            <ul>";
+    str += btn_obj;
+    str += "            </ul>";
+    str += "          </div>";
+    str += "        </div>";
+    $(".chat-logs").append(str);
+    $("#cm-msg-" + INDEX)
+      .hide()
+      .fadeIn(300);
+    $(".chat-logs")
+      .stop()
+      .animate({ scrollTop: $(".chat-logs")[0].scrollHeight }, 1000);
+    $("#chat-input").attr("disabled", true);
+  }

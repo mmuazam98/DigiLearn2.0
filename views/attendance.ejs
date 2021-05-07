@@ -1,0 +1,23 @@
+<%- include("partials/header") %> 
+<section id="attendance">
+    <div class="container-main">
+        <div class="title-main">
+            <span id="blur">All exams</span>
+            <h3 id="heading">Exams</h3>
+        </div>
+        <div class="exams">
+            <% classes.forEach((cl,index) => { %>
+                <div class="exam-<%= index %> exam">
+                    <span><%= index+1 %>.</span>
+                    <span><%= cl.name %> - </span>
+                    <span>Class <%= cl.class %>th</span>
+                    <a href="/attendance/<%= cl.class %><%= cl.subjectID %>" class="btn-start" id="class<%= index+1 %>">View Students <i class="far fa-users"></i></a>
+                </div>
+            <% }) %>
+            
+           
+        </div>
+
+    </div>
+</section>
+<%- include("partials/footer") %> 

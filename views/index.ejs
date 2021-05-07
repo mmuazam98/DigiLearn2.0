@@ -1,0 +1,86 @@
+<%- include("partials/header") %>
+<!-- <section id="preloader">
+  <div id="overlayer"></div>
+  <span class="loader">
+    <img src="images/logo.jpeg" alt="" class="img-fluid">
+  </span>
+</section> -->
+
+<section id="days">
+  <div class="container">
+    <span id="Mon">Mon</span>
+    <span id="Tue">Tue</span>
+    <span id="Wed">Wed</span>
+    <span id="Thu">Thu</span>
+    <span id="Fri">Fri</span>
+    <span id="wknd">Sat</span>
+  </div>
+</section>
+
+<section id="games">
+  <div class="col-xl-12">
+    <div class="card">
+      <img class="card-img" src="images/games.jpg" alt="subject" />
+      <div class="card-img-overlay text-white">
+        <!-- <h4 class="card-title">${subjects[Day[i]-1].subject}</h4> -->
+        <button
+          class="btn card-button"
+          onClick='window.open("https://www.mathplayground.com/");'
+        >
+          Play Now
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-12">
+    <div class="card">
+      <img class="card-img" src="images/games3.jpg" alt="subject" />
+      <div class="card-img-overlay text-white">
+        <!-- <h4 class="card-title">${subjects[Day[i]-1].subject}</h4> -->
+        <button
+          class="btn card-button"
+          onClick='window.open("https://www.turtlediary.com/games/science.html");'
+        >
+          Play Now
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-12">
+    <div class="card">
+      <img class="card-img" src="images/games4.png" alt="subject" />
+      <div class="card-img-overlay text-white">
+        <!-- <h4 class="card-title">${subjects[Day[i]-1].subject}</h4> -->
+        <button
+          class="btn card-button"
+          onClick='window.open("https://www.gamestolearnenglish.com/");'
+        >
+          Play Now
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section id="index" class="mb-3"></section>
+  <script>
+    let subject=[],att=[];
+  </script>
+  <% for(let j=0; j<classes.length; j++) { %>
+    <script>
+     subject.push('<%-JSON.stringify(classes[j])%>');
+    </script>
+  <%}%>
+
+  <script>
+    let des = '<%=designation%>'
+    let subjects=[]
+    for(let i=0; i<subject.length; i++)
+     subjects.push(JSON.parse(subject[i]));
+     console.log(subjects);
+  </script>
+
+
+
+<%- include("partials/footer") %>

@@ -4,11 +4,6 @@ const util = require("util");
 const bodyparser = require("body-parser");
 const session = require("express-session");
 const mysql = require("mysql");
-const bcrypt = require("bcrypt");
-const multer = require("multer");
-const shortid = require("shortid");
-const { json } = require("body-parser");
-const { response } = require("express");
 const sessionChecker = require("./middleware/sessionChecker");
 const login = require("./routes/login");
 
@@ -21,14 +16,19 @@ app.use(express.json());
 
 app.use("/", login);
 // console.log(shortid.generate());
+// const con = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "",
+//   database: "digi-learn",
+//   multipleStatements: true,
+// });
 const con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "digi-learn",
-  multipleStatements: true,
+  host: "db4free.net",
+  user: "digilearn",
+  password: "M.m@9084",
+  database: "digilearn",
 });
-
 app.get("/", (req, res) => {
   if (req.session.name) res.redirect("/home");
   else res.render("login", { page: "login" });

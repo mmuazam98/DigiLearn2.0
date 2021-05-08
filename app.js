@@ -28,6 +28,7 @@ const con = mysql.createConnection({
   user: "digilearn",
   password: "M.m@9084",
   database: "digilearn",
+  multipleStatements: true,
 });
 app.get("/", (req, res) => {
   if (req.session.name) res.redirect("/home");
@@ -186,6 +187,7 @@ app.get("/attendance/:class", async (req, res) => {
 });
 app.post("/mark", sessionChecker, async (req, res) => {
   let body = req.body;
+  console.log(body);
   let cls = body.subjectID;
   let query = `UPDATE classes SET total = total + ${1} WHERE subjectID='${cls}'`;
   con.query(query, (err, results) => {
@@ -196,8 +198,9 @@ app.post("/mark", sessionChecker, async (req, res) => {
     let sub = results[0].name.toLowerCase();
     body.attendance.forEach((e, index) => {
       let update = `UPDATE attendance SET ${sub} = ${sub}+${e.att} WHERE userID='${e.uid}'`;
+      console.log(update);
       con.query(update, (err, results) => {
-        // console.log(results);
+        console.log(results);
         if (index + 1 == body.attendance.length) {
           console.log("Updated attendance");
           res.end();

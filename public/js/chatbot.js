@@ -75,7 +75,7 @@ $(function () {
     var str = "";
     str += "<div id='cm-msg-" + INDEX + "' class=\"chat-msg " + type + '">';
     str += '          <span class="msg-avatar">';
-    if (type == "self") str += '            <img src="images/def.png">';
+    if (type == "self") str += '            <img src="../images/def.png">';
 
     str += "          </span>";
     str += '          <div class="cm-msg-text">';
@@ -95,6 +95,7 @@ $(function () {
       .animate({ scrollTop: $(".chat-logs")[0].scrollHeight }, 1000);
   }
   function generate_message_bot(msg, type) {
+    msg = msg.toLowerCase();
     let finalMsg =
       "I could not understand your query, you can mail your queries at cookieclan@gmail.com. Thank you.";
     if (msg.includes("hello") || msg.includes("hi") || msg.includes("hey")) {
@@ -121,7 +122,12 @@ $(function () {
     if (msg.includes("how are you")) {
       finalMsg = greetings[Math.floor(Math.random() * greetings.length)];
     }
-    if (msg.includes("good") || msg.includes("fine") || msg.includes("great")) {
+    if (
+      msg.includes("good") ||
+      msg.includes("fine") ||
+      msg.includes("great") ||
+      msg.includes("ok")
+    ) {
       finalMsg = "Okay.";
     }
     if (msg.includes("hobbies")) {
@@ -140,7 +146,7 @@ $(function () {
     var str = "";
     str += "<div id='cm-msg-" + INDEX + "' class=\"chat-msg " + type + '">';
     str += '          <span class="msg-avatar">';
-    str += '            <img src="images/chatbot.jpg">';
+    str += '            <img src="../images/chatbot.jpg">';
     str += "          </span>";
     str += '          <div class="cm-msg-text">';
     str += finalMsg;

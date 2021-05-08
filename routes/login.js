@@ -1,11 +1,8 @@
 const Router = require("express").Router();
 const mysql = require("mysql");
 const bcrypt = require("bcrypt");
-const { json } = require("body-parser");
-const bodyparser = require("body-parser");
 // const session = require("session-session");
 const session = require("express-session");
-const MemoryStore = require("memorystore");
 // const con = mysql.createConnection({
 //   host: "localhost",
 //   user: "root",

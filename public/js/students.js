@@ -48,6 +48,7 @@ $(document).ready(() => {
     fetch("/mark", config).then(() => {
       console.log("hi");
       window.location.href = "/attendance";
+      console.log(finalObj);
     });
   });
 });

@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 const util = require("util");
 const bodyparser = require("body-parser");
 const session = require("express-session");
@@ -13,7 +14,6 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
 app.use("/", login);
 // console.log(shortid.generate());
 // const con = mysql.createConnection({
@@ -24,10 +24,10 @@ app.use("/", login);
 //   multipleStatements: true,
 // });
 const con = mysql.createConnection({
-  host: "db4free.net",
-  user: "digilearn",
-  password: "M.m@9084",
-  database: "digilearn",
+  host: "sql6.freesqldatabase.com",
+  user: "sql6417560",
+  password: "Lr3WaFSTAH",
+  database: "sql6417560",
   multipleStatements: true,
 });
 app.get("/", (req, res) => {
@@ -169,10 +169,12 @@ app.get("/attendance", sessionChecker, async (req, res, next) => {
   });
 });
 
-app.get("/attendance/:class", async (req, res) => {
+app.get("/attendance/:class", sessionChecker, async (req, res) => {
   let { name, username, contact, designation, class_ } = req.session;
   let cls = req.params.class[0];
   let query = `SELECT * FROM users WHERE class='${cls[cls.length - 1]}'`;
+  console.log(publicPath);
+  console.log(express.static(__dirname + "/public"));
   con.query(query, (err, results) => {
     res.render("students", {
       page: "students",

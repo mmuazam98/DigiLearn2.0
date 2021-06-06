@@ -10,10 +10,11 @@ const session = require("express-session");
 //   database: "digi-learn",
 // });
 const con = mysql.createConnection({
-  host: "db4free.net",
-  user: "digilearn",
-  password: "M.m@9084",
-  database: "digilearn",
+  host: "sql6.freesqldatabase.com",
+  user: "sql6417560",
+  password: "Lr3WaFSTAH",
+  database: "sql6417560",
+  multipleStatements: true,
 });
 Router.use(session({ secret: "ZxCvBnM", saveUninitialized: true, resave: true }));
 

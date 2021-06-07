@@ -173,8 +173,7 @@ app.get("/attendance/:class", sessionChecker, async (req, res) => {
   let { name, username, contact, designation, class_ } = req.session;
   let cls = req.params.class[0];
   let query = `SELECT * FROM users WHERE class='${cls[cls.length - 1]}'`;
-  console.log(publicPath);
-  console.log(express.static(__dirname + "/public"));
+
   con.query(query, (err, results) => {
     res.render("students", {
       page: "students",
